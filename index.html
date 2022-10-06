@@ -1,1 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
 
+  
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webjr</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- daisyui -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+
+  <!-- flowbite -->
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
+  <!-- Londrina+Outline -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet">
+
+
+
+
+  <!-- Tailwindcss setup -->
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+            primaryBG: '#121962',
+            secondaryBG: '#f20574',
+            white: '#fff'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      width: 100%;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      background-color: #121962;
+    }
+
+    .parent {
+      z-index: 0;
+      position: relative;
+      top: -250px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+
+      /* background-color: #111827; */
+    }
+
+    .div1 {
+      grid-area: 1 / 3 / 2 / 4;
+      height: 300px;
+      width: 300px;
+      border: 5px solid #f20475;
+      border-radius: 40px;
+      position: relative;
+      top: 140px;
+      background: url('https://i.pinimg.com/736x/e7/11/a4/e711a431523cd34eab2fcbb7cea661d3.jpg');
+      cursor: pointer;
+    }
+
+    .div2 {
+      grid-area: 1 / 4 / 2 / 5;
+      height: 250px;
+      width: 300px;
+      border: 5px solid #f20475;
+      border-radius: 40px;
+      position: relative;
+      top: 10px;
+      background: url('https://i.pinimg.com/736x/e7/11/a4/e711a431523cd34eab2fcbb7cea661d3.jpg');
+      cursor: pointer;
+    }
+
+    .div3 {
+      grid-area: 1 / 5 / 2 / 5;
+      height: 300px;
+      width: 300px;
+      border: 5px solid #f20475;
+      border-radius: 40px;
+      position: relative;
+      top: 90px;
+      background: url('https://i.pinimg.com/736x/e7/11/a4/e711a431523cd34eab2fcbb7cea661d3.jpg');
+      cursor: pointer;
+    }
+
+    .div4 {
+      grid-area: 2 / 3 / 3 / 4;
+      height: 300px;
+      width: 300px;
+      border: 5px solid #f20475;
+      border-radius: 40px;
+      position: relative;
+      top: 140px;
+      background: url('https://i.pinimg.com/736x/e7/11/a4/e711a431523cd34eab2fcbb7cea661d3.jpg');
+      cursor: pointer;
+    }
+
+    .div5 {
+      grid-area: 2 / 5 / 4 / 4;
+      height: 300px;
+      width: 300px;
+      border: 5px solid #f20475;
+      border-radius: 40px;
+      position: relative;
+      top: -30px;
+      background: url('https://i.pinimg.com/736x/e7/11/a4/e711a431523cd34eab2fcbb7cea661d3.jpg');
+      cursor: pointer;
+    }
+
+    .div6 {
+      grid-area: 2 / 5 / 3 / 5;
+      height: 300px;
+      width: 300px;
+      border: 5px solid #f20475;
+      border-radius: 40px;
+      position: relative;
+      top: 90px;
+      background: url('https://i.pinimg.com/736x/e7/11/a4/e711a431523cd34eab2fcbb7cea661d3.jpg');
+      cursor: pointer;
+    }
+
+    .div7 {
+      grid-area: 3 / 4 / 4 / 5;
+      height: 300px;
+      width: 300px;
+      border: 5px solid #f20475;
+      border-radius: 40px;
+      position: relative;
+      top: -25px;
+      background: url('https://i.pinimg.com/736x/e7/11/a4/e711a431523cd34eab2fcbb7cea661d3.jpg');
+      cursor: pointer;
+    }
+
+    @media (max-width:1600px) {
+      .quote {
+        height: 850px;
+        background-color: #121962;
+      }
+
+      .contactdiv {
+        height: 800px;
+        background-color: #121962;
+      }
+    }
+
+    @media (max-width:1400px) {
+      .parent {
+        display: none;
+      }
+
+      #portfolio {
+        display: none;
+      }
+
+      #port {
+        display: none;
+      }
+
+      .quote {
+        height: 850px;
+        background-color: #121962;
+      }
+
+      .contactdiv {
+        height: 700px;
+        background-color: #121962;
+      }
+
+    }
+
+
+    @media (max-width:1200px) {
+
+      .div1,
+      .div3,
+      .div4,
+      .div5,
+      .div6,
+      .div7 {
+        width: 230px;
+        height: 230px;
+      }
+
+      .div2 {
+        width: 230px;
+        height: 180px;
+      }
+
+      .parent {
+        display: none;
+      }
+
+      #portfolio {
+        display: none;
+      }
+
+      #port {
+        display: none;
+      }
+      .quote {
+        height: 650px;
+        background-color: #121962;
+      }
+
+
+      .contactdiv {
+        height: 750px;
+        background-color: #121962;
+      }
+    }
+
+    @media (max-width:890px) {
+
+      .div1,
+      .div3,
+      .div4,
+      .div5,
+      .div6,
+      .div7 {
+        width: 180px;
+        height: 180px;
+
+      }
+
+      .div2 {
+        width: 180px;
+        height: 130px;
+      }
+
+      .parent {
+        display: none;
+      }
+
+      #portfolio {
+        display: none;
+      }
+
+      #port {
+        display: none;
+      }
+
+      .quote {
+        height: 650px;
+        background-color: #121962;
+      }
+
+      .contactdiv {
+
+        height: 700px;
+
+        height:700px;
+
+        background-color: #121962;
+      }
+    }
+
+    @media (max-width:768px) {
+      .quote {
+        height: 700px;
+        background-color: #121962;
+      }
+
+      .contactdiv {
+        height: 700px;
+        background-color: #121962;
+      }
+    }
+
+    @media (max-width:680px) {
+      .quote {
+        height: 480px;
+        background-color: #121962;
+      }
+    }
+
+    @media (max-width:428px) {
+      .quote {
+        height: 550px;
+        background-color: #121962;
+      }
+
+      .contactdiv {
+        height: 900px;
+        background-color: #121962;
+      }
+    }
+
+    @media (max-width:390px) {
+      .quote {
+        display: none;
+      }
+
+      .contactdiv {
+        height: 850px;
+        background-color: #121962;
+      }
+    }
+  </style>
+  <link crossorigin="anonymous" href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div class="bgcolor">
+    <nav class=" border-gray-200 px-2 sm:px-4 py-2.5 rounded ">
+      <div class="container flex flex-wrap justify-between items-center
+          mx-auto lg:relative">
+        <a rel="noopener noreferrer" href="#" aria-label="Back to homepage" class="flex items-center p-2">
+          <img src="static/logo.svg" alt="logo" class="w-20 h-20">
+
+        </a>
+
+        <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm md:hidden
+            text-white focus:outline-none" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0
+                011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0
+                110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div class="hidden w-full text-center md:bg-transparent
+            md:block md:w-auto" id="navbar-default">
+          <ul class="flex flex-col p-4 md:flex-row md:space-x-8 md:mt-0
+              md:text-sm md:font-medium md:border-0 ">
+            <li>
+              <a href="#portid" class="block py-2 pr-4 pl-3 text-white rounded
+                  md:bg-transparent md:p-0 dark:text-white">Project</a>
+            </li>
+            <li>
+              <a href="#contact" class="block py-2 pr-4 pl-3 text-white rounded
+              md:bg-transparent md:p-0 dark:text-white">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class=" imgcenter relative flex justify-center mb-10 ">
+
+
+      <div class="">
+        <img src="static/home.png" alt="home" class="w-[550px] h-100">
+        <section aria-label="sidebar_icons" class="flex flex-col gap-1
+            absolute bottom-0 left-4 ">
+          <div style="margin-bottom: 10px;" class="md:w-6 w-4 ">
+            <a href="https://www.linkedin.com/in/web-jr/ ">
+              <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <path d="M30 60c16.569 0
+                      30-13.431 30-30C60 13.431 46.569 0 30 0 13.431 0 0
+                      13.431 0 30c0 16.569 13.431 30 30 30Z" fill="#ffffff" class="fill-000000"></path>
+                  <path d="M21.883
+                      43.823V25.524h-5.656v18.3h5.656Zm0-24.785c-.034-1.637-1.125-2.884-2.898-2.884-1.773
+                      0-2.932 1.247-2.932 2.884 0 1.602 1.125 2.885 2.864
+                      2.885h.034c1.807 0 2.932-1.283 2.932-2.885Zm9.227
+                      24.785V33.397c0-.558.04-1.116.204-1.513.449-1.116
+                      1.47-2.27 3.184-2.27 2.246 0 3.654 1.274 3.654
+                      3.783v10.426h5.694V33.118c0-5.734-3.061-8.402-7.144-8.402-3.348
+                      0-4.817 1.871-5.633 3.145l.04-2.447h-5.684c.082 1.752
+                      0 18.41 0 18.41h5.685Z" fill="#000000" class="fill-ffffff"></path>
+                </g>
+              </svg>
+            </a>
+
+          </div>
+          <div style="margin-bottom: 10px;" class="md:w-6 w-4">
+
+            <a href="https://www.behance.net/webjr">
+              <svg version="1.0" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                <g fill="#ffffff" class="fill-111111">
+                  <path d="M12.914 15.272s3.027-.23
+                      3.027-3.852c0-3.619-2.053-5.403-5.191-5.403L0
+                      6v20h11s5.5.174 5.5-6c0 0 .404-4.728-3.586-4.728zM4
+                      9h5.5s1.882.031 1.882 2.471C11.382 14 9.5 14 9.5
+                      14H4V9zm6 14H4v-6h6s3 .031 3 3-2.568 3-3 3zM25
+                      11c-7.513 0-7.5 7.5-7.5 7.5S17 26 25 26c0 0 7 0
+                      7-6h-4s0 3-3 3c0 0-3 0-3-4h10c0-2 0-8-7-8zm-3
+                      6s-.066-3 3-3c3.065 0 3 3 3 3h-6zM21 8h8v2h-8z"></path>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <div style="margin-bottom: 10px;" class="md:w-6 w-4">
+            <a href="https://instagram.com/webjr.web?igshid=YmMyMTA2M2Y=">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.7
+                  56.7" xml:space="preserve">
+                <path d="M28.2 16.7c-7 0-12.8
+                    5.7-12.8 12.8s5.7 12.8 12.8 12.8S41 36.5 41
+                    29.5s-5.8-12.8-12.8-12.8zm0 21c-4.5
+                    0-8.2-3.7-8.2-8.2s3.7-8.2 8.2-8.2 8.2 3.7 8.2 8.2-3.7
+                    8.2-8.2 8.2z" fill="#ffffff" class="fill-000000"></path>
+                <circle cx="41.5" cy="16.4" r="2.9" fill="#ffffff" class="fill-000000"></circle>
+                <path d="M49
+                    8.9c-2.6-2.7-6.3-4.1-10.5-4.1H17.9c-8.7 0-14.5 5.8-14.5
+                    14.5v20.5c0 4.3 1.4 8 4.2 10.7 2.7 2.6 6.3 3.9 10.4
+                    3.9h20.4c4.3 0 7.9-1.4 10.5-3.9 2.7-2.6 4.1-6.3
+                    4.1-10.6V19.3c0-4.2-1.4-7.8-4-10.4zm-.4 31c0 3.1-1.1
+                    5.6-2.9 7.3s-4.3 2.6-7.3 2.6H18c-3 0-5.5-.9-7.3-2.6C8.9
+                    45.4 8 42.9 8 39.8V19.3c0-3 .9-5.5 2.7-7.3 1.7-1.7
+                    4.3-2.6 7.3-2.6h20.6c3 0 5.5.9 7.3 2.7 1.7 1.8 2.7 4.3
+                    2.7 7.2v20.6z" fill="#ffffff" class="fill-000000"></path>
+              </svg>
+            </a>
+          </div>
+          <div style="margin-bottom: 10px;" class="md:w-6 w-4">
+
+            <a href="https://github.com/webjr-web">
+              <svg viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M296.133 354.174c49.885-5.891 102.942-24.029
+                    102.942-110.192 0-24.49-8.624-44.448-22.67-59.869 2.266-5.89
+                    9.515-28.114-2.734-58.947 0 0-18.139-5.898-60.759
+                    22.669-18.139-4.983-38.09-8.163-56.682-8.163-19.053 0-39.011
+                    3.18-56.697
+                    8.163-43.082-28.567-61.22-22.669-61.22-22.669-12.241
+                    30.833-4.983 53.057-2.718 58.947-14.061 15.42-22.677
+                    35.379-22.677 59.869 0 86.163 53.057 104.301 102.942
+                    110.192-6.344 5.452-12.241 15.873-14.507 30.387-12.702
+                    5.438-45.808 15.873-65.758-18.592 0
+                    0-11.795-21.31-34.012-22.669 0 0-22.224-.453-1.813 13.592 0
+                    0 14.96 6.812 24.943 32.653 0 0 13.6 43.089 76.179
+                    29.48v38.543c0 5.906-4.53 12.702-15.865 10.89C96.139 438.977
+                    32.2 354.626 32.2 255.77c0-123.807 100.216-224.022
+                    224.03-224.022 123.347 0 224.023 100.216 223.57 224.022 0
+                    98.856-63.946 182.754-152.828 212.688-11.342
+                    2.266-15.873-4.53-15.873-10.89V395.45c.001-20.873-6.811-34.465-14.966-41.276zM512
+                    256.23C512 114.73 397.263 0 256.23 0 114.73 0 0 114.73 0
+                    256.23 0 397.263 114.73 512 256.23 512 397.263 512 512
+                    397.263 512 256.23z" fill="#ffffff" fill-rule="evenodd" class="fill-0d2636"></path>
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <section aria-label="scroll" class="hidden text-white text-lg
+            tracking-widest md:flex items-center gap-6 rotate-90 absolute
+            -right-16 bottom-20">
+          <p class="scroll_section">S c r o l l</p>
+          <div class="bg-white w-20 h-[1px] "></div>
+
+        </section>
+
+
+      </div>
+
+
+    </div>
+    <div class="xl:mt-28 lg:mt-24 md:mt-16 mt-10">
+      <section class="grid-container mx-auto my-0 px-4 py-2 md:text-xl
+          md:flex md:justify-between md:flex-row md:text-left md:gap-0 flex
+          flex-col gap-8 text-center ">
+        <div class="font-bold text-sm lg:text-[25px] lg:leading-[35px]
+            md:w-1/2 lg:w-1/2 md:mr-4">If you're a small business, you need
+          a website. That's why we're here.
+          We make it easy for small
+          businesses to build their own websites and stay up-to-date on
+          the latest mobile trends.
+        </div>
+        <div class=" md:block border-b-2 w-52 lg:w-44 font-bold mx-4"></div>
+        <div class="md:ml-4 text-sm lg:text-xl">Create a website for your
+          small business</div>
+      </section>
+    </div>
+    <div class="xl:mt-28 lg:mt-24 md:mt-16 mt-10">
+      <img src="static/wave.png" alt="wave">
+    </div>
+
+    <div class="xl:mt-28 lg:mt-24 md:mt-16 mt-10 text-xs
+        text-transparent">.</div>
+  </div>
+
+  <!--  -->
+  <div id="solutions" class="bg-gray-900 flex items-center ">
+
+    <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full
+        lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 flex flex-col gap-8">
+      <div class="text-center">
+        <h1 class="text-white uppercase" style="font-size: 40px; padding:
+            20px 0;">What makes us special!</h1>
+        <p class="text-white">Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Odio tenetur, iusto minima
+          magni nam voluptates ipsum at modi laborum consectetur
+          laudantium cum blanditiis facilis accusantium eaque
+          alias aspernatur quidem eligendi?</p>
+      </div>
+
+      <div class="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="px-10 py-20 text-center transition duration-300 transform
+            bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl
+            hover:shadow-2xl border-neutral-400 border-2 ">
+          <p class="font-semibold text-gray-200">
+            Sed ut perspiciatis unde omnis iste
+          </p>
+        </div>
+        <div class="px-10 py-20 text-center transition duration-300 transform
+            bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl
+            hover:shadow-2xl border-neutral-400 border-2 ">
+          <p class="font-semibold text-gray-200">
+            Well, the way they make shows is
+          </p>
+        </div>
+        <div class="px-10 py-20 text-center transition duration-300 transform
+            bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl
+            hover:shadow-2xl border-neutral-400 border-2 ">
+          <p class="font-semibold text-gray-200">
+            Some don't, become nothing again
+          </p>
+        </div>
+        <div class="px-10 py-20 text-center transition duration-300 transform
+            bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl
+            hover:shadow-2xl border-neutral-400 border-2 ">
+          <p class="font-semibold text-gray-200">
+            Bro ipsum dolor sit amet gaper dart
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote">
+
+    <section class="w-full py-4 pt-4 pb-2 md:pb-20 top-15
+      min-h-screen">
+      <div class="font-bold text-3xl md:text-6xl xl:text-7xl mt-10 ml-6">
+        <p class="text-white">Build momentum by</p>
+        <p class="text-white">building better websites</p>
+      </div>
+      <div class=" font-bold text-5xl md:text-6xl xl:text-8xl mt-10 mb-10
+        text-right w-full pr-6 uppercase overflow-hidden ">
+        <p class="customTxt">Website development</p>
+      </div>
+      <div class="font-bold text-3xl md:text-5xl xl:text-7xl mt-4 mr-6
+        text-right">
+        <p class="text-white">Designing success through</p>
+        <p class="text-white">creative web design</p>
+      </div>
+      <div class=" font-bold text-5xl md:text-6xl xl:text-8xl mt-10 mb-10
+        w-full pl-6 uppercase ">
+        <p class="customTxt">ux/ui design</p>
+      </div>
+    </section>
+  </div>
+
+  <section class=" relative ">
+
+    <div class=" w-screen black_bg flex flex-col gap-6
+        md:gap-14 ">
+
+      <div class="flex items-center justify-center md:justify-start mt-6">
+        <div class="flex flex-col gap-6 ">
+
+          <div class="hidden md:block secondaryBG xl:w-[75vw] md:w-[57vw]
+              lg:w-[65vw] h-5"></div>
+          <div class="hidden md:block secondaryBG xl:w-[75vw] md:w-[57vw]
+              lg:w-[65vw] h-5"></div>
+
+        </div>
+
+        <div class="font-bold text-5xl md:text-7xl xl:text-7xl mb-2
+            md:ml-2">
+
+          <p class="secondaryTxt text-center md:text-left ">SERVICES</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-10 ">
+
+        <div class="md:absolute bottom-64 left-8 hover:scale-105
+            hover:rotate-1 transition-transform">
+          <a href="#portid" class="">
+            <div class="service_card">
+              <div class="service_tools">
+                <div class="service_circle">
+                  <span class="service_red service_box"></span>
+                </div>
+                <div class="service_circle">
+                  <span class="service_yellow service_box"></span>
+                </div>
+                <div class="service_circle">
+                  <span class="service_green service_box"></span>
+                </div>
+              </div>
+              <div class="service_card__content flex flex-col justify-end
+                  pt-[120PX] pl-3">
+                <p class="text-gray-500 font-bold text-3xl ">WEB</p>
+                <p class="text-white font-bold text-4xl ">DESIGN</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="md:absolute bottom-64 left-64 hover:scale-105
+            hover:rotate-1 transition-transform">
+          <a href="#portid" class="">
+            <div class="service_card">
+              <div class="service_tools">
+                <div class="service_circle">
+                  <span class="service_red service_box"></span>
+                </div>
+                <div class="service_circle">
+                  <span class="service_yellow service_box"></span>
+                </div>
+                <div class="service_circle">
+                  <span class="service_green service_box"></span>
+                </div>
+              </div>
+              <div class="service_card__content flex flex-col justify-end
+                  pt-[120PX] pl-3">
+                <p class="text-gray-500 font-bold text-2xl ">BUSINNESS</p>
+                <p class="text-white font-bold text-3xl ">BRANDING</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-6 text-center md:text-left
+          items-center pb-24 mx-auto">
+
+        <p class="font-bold text-3xl md:text-4xl xl:text-5xl text-white ">We
+          produce impactful,<br> lasting results.</p>
+
+        <div class="border-b-2 border-white w-24 lg:w-64 xl:w-96 "></div>
+        <a href="#contact">
+          <button type="submit" class=" w-32 text-white px-4 py-2 font-bold
+              rounded-full shadow focus:outline-none focus:ring hover:ring
+              focus:ring-opacity- focus:ring-violet-400 hover:ring-violet-400
+              dark:text-gray-900 contact_button ">Contact</button>
+        </a>
+
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <section id="testimonials" class="xl:flex" style="background-color:
+      #121962;">
+    <div class="px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8
+        sm:py-24 self-center">
+      <h2 class="text-4xl font-bold tracking-tight text-center sm:text-5xl
+          text-white">
+        Read trusted reviews from our customers
+      </h2>
+
+      <div class="mt-12 swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <blockquote class="p-8 bg-gray-700 rounded-lg ">
+              <div class="flex items-center">
+                <img src="https://www.hyperui.dev/photos/man-4.jpeg" alt=""
+                  class="object-cover w-16 h-16 rounded-full" />
+
+                <div class="ml-4">
+                  <div class="flex space-x-0.5 justify-center
+                      text-green-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07
+                          3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588
+                          1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07
+                          3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1
+                          0 00-1.175 0l-2.8
+                          2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+                          1 0 00-.364-1.118L2.98
+                          8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0
+                          00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07
+                            3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588
+                            1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07
+                            3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1
+                            1 0 00-1.175 0l-2.8
+                            2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+                            1 0 00-.364-1.118L2.98
+                            8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0
+                            00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902
+                              0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371
+                              1.24.588 1.81l-2.8 2.034a1 1 0 00-.364
+                              1.118l1.07 3.292c.3.921-.755 1.688-1.54
+                              1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8
+                              2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+                              1 0 00-.364-1.118L2.98
+                              8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0
+                              00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902
+                                0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0
+                                1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364
+                                1.118l1.07 3.292c.3.921-.755 1.688-1.54
+                                1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8
+                                2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+                                1 0 00-.364-1.118L2.98
+                                8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0
+                                00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902
+                                  0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0
+                                  1.371 1.24.588 1.81l-2.8 2.034a1 1 0
+                                  00-.364 1.118l1.07 3.292c.3.921-.755
+                                  1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175
+                                  0l-2.8
+                                  2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+                                  1 0 00-.364-1.118L2.98
+                                  8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1
+                                  0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  </div>
+
+                  <p class="mt-1 text-lg font-medium
+                                text-white">Katie</p>
+                </div>
+              </div>
+
+              <p class="mt-4 text-white">
+                Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Deserunt
+                voluptatem alias ut provident sapiente
+                repellendus.
+              </p>
+            </blockquote>
+          </div>
+          <div class="swiper-slide">
+            <blockquote class="p-8 bg-gray-700 rounded-lg ">
+              <div class="flex items-center">
+                <img src="https://www.hyperui.dev/photos/man-4.jpeg" alt=""
+                  class="object-cover w-16 h-16 rounded-full" />
+
+                <div class="ml-4">
+                  <div class="flex space-x-0.5 justify-center
+                                text-green-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902
+                                    0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0
+                                    1.371 1.24.588 1.81l-2.8 2.034a1 1 0
+                                    00-.364 1.118l1.07 3.292c.3.921-.755
+                                    1.688-1.54 1.118l-2.8-2.034a1 1 0
+                                    00-1.175 0l-2.8
+                                    2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+                                    1 0 00-.364-1.118L2.98
+                                    8.72c-.783-.57-.38-1.81.588-1.81h3.461a1
+                                    1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921
+                                      1.902 0l1.07 3.292a1 1 0
+                                      00.95.69h3.462c.969 0 1.371 1.24.588
+                                      1.81l-2.8 2.034a1 1 0 00-.364
+                                      1.118l1.07 3.292c.3.921-.755
+                                      1.688-1.54 1.118l-2.8-2.034a1 1 0
+                                      00-1.175 0l-2.8
+                                      2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+                                      1 0 00-.364-1.118L2.98
+                                      8.72c-.783-.57-.38-1.81.588-1.81h3.461a1
+                                      1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921
+                                        1.902 0l1.07 3.292a1 1 0
+                                        00.95.69h3.462c.969 0 1.371 1.24.588
+                                        1.81l-2.8 2.034a1 1 0 00-.364
+                                        1.118l1.07 3.292c.3.921-.755
+                                        1.688-1.54 1.118l-2.8-2.034a1 1 0
+                                        00-1.175 0l-2.8
+                                        2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+                                        1 0 00-.364-1.118L2.98
+                                        8.72c-.783-.57-.38-1.81.588-1.81h3.461a1
+                                        1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921
+                                          1.902 0l1.07 3.292a1 1 0
+                                          00.95.69h3.462c.969 0 1.371
+                                          1.24.588 1.81l-2.8 2.034a1 1 0
+                                          00-.364 1.118l1.07
+                                          3.292c.3.921-.755 1.688-1.54
+                                          1.118l-2.8-2.034a1 1 0 00-1.175
+                                          0l-2.8
+                                          2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+                                          1 0 00-.364-1.118L2.98
+                                          8.72c-.783-.57-.38-1.81.588-1.81h3.461a1
+                                          1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921
+                                            1.603-.921 1.902 0l1.07 3.292a1
+                                            1 0 00.95.69h3.462c.969 0 1.371
+                                            1.24.588 1.81l-2.8 2.034a1 1 0
+                                            00-.364 1.118l1.07
+                                            3.292c.3.921-.755 1.688-1.54
+                                            1.118l-2.8-2.034a1 1 0 00-1.175
+                                            0l-2.8
+                                            2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+                                            1 0 00-.364-1.118L2.98
+                                            8.72c-.783-.57-.38-1.81.588-1.81h3.461a1
+                                            1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  </div>
+
+                  <p class="mt-1 text-lg font-medium
+                                          text-white">Katie</p>
+                </div>
+              </div>
+
+              <p class="mt-4 text-white">
+                Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Deserunt
+                voluptatem alias ut provident sapiente
+                repellendus.
+              </p>
+            </blockquote>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="portid">
+    <section id="port">
+
+      <div style="background-color: #121962; z-index: -2
+                            !important; height:
+                            1000px;">
+        <div style="height: 700px; background: #111827;
+                              z-index: 0; position:
+                              relative; top: 100px; padding: 20px;">
+          <section id="portfolio" style="position:
+                                relative; top:
+                                200px; font-weight: 900;">
+            <span class="text-white text-6xl ">WEB
+              DESIGN</span><br>
+            <span class="text-6xl " style="color:
+                                  #f20475;">PORTFOLIO</span>
+          </section>
+          <div class="parent">
+
+            <div class="div1 div" onclick="div(window.open('https:/webjr-web.github.io/ReqSourcing/', '_blank'));"></div>
+            <div class="div2 div" onclick="div(window.open('https:/webjr-web.github.io/TechSaavy-Club/', '_blank'));"></div>
+            <div class="div3 div" onclick="div(window.open('https:/webjr-web.github.io/Covid-19-AwarenessSite/', '_blank'));"></div>
+            <div class="div4 div" onclick="div(window.open('https:/webjr-web.github.io/Portfolio-Site/', '_blank'));"></div>
+            <div class="div5 div" onclick="div(window.open('https:/webjr-web.github.io/HomeSmart/', '_blank'));"></div>
+            <div class="div6 div" onclick="div(window.open('', '_blank'));"></div>
+            <div class="div7 div" onclick="div(window.open('', '_blank'));"></div>
+          </div>
+        </div>
+
+      </div>
+
+            <div class="div1">1 </div>
+            <div class="div2">2 </div>
+            <div class="div3">3 </div>
+            <div class="div4">4 </div>
+            <div class="div5">5 </div>
+            <div class="div6">6 </div>
+            <div class="div7">7 </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </section>
+  </div>
+  <section style="background-color: #121962;" class="xl:hidden 2xl:hidden bg-white
+                          dark:bg-gray-900">
+    <div id="portid">
+      <div class="container px-6 py-10 mx-auto">
+        <h1 class="text-3xl
+                                text-center text-white capitalize
+                                lg:text-4xl dark:text-white font-bold">Our
+          Portfolio</h1>
+
+        <div class="grid grid-cols-1 gap-8 mt-8
+                                xl:mt-12 xl:gap-12 lg:grid-cols-2">
+          <div class="flex items-end
+                                  overflow-hidden bg-cover rounded-lg
+                                  h-96"
+
+                                  onclick="div(window.open('https:/webjr-web.github.io/ReqSourcing/', '_blank'));"
+
+
+            style="background-image:url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80')">
+            <div class="w-full px-8 py-4
+                                    overflow-hidden rounded-b-lg
+                                    backdrop-blur-sm bg-white/60
+                                    dark:bg-gray-800/60">
+              <h2 class="mt-4 text-2xl
+                                      font-semibold text-gray-800
+                                      capitalize dark:text-white">Best
+                website
+                collections</h2>
+              <p class="mt-2 text-lg
+                                      tracking-wider text-blue-500
+                                      uppercase dark:text-blue-400 ">Website</p>
+            </div>
+          </div>
+
+          <div class="flex items-end
+                                  overflow-hidden bg-cover rounded-lg
+                                  h-96"
+
+                                  onclick="div(window.open('https:/webjr-web.github.io/TechSaavy-Club/', '_blank'));"
+
+
+            style="background-image:url('https://images.unsplash.com/photo-1621609764180-2ca554a9d6f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80')">
+            <div class="w-full px-8 py-4
+                                    overflow-hidden rounded-b-lg
+                                    backdrop-blur-sm bg-white/60
+                                    dark:bg-gray-800/60">
+              <h2 class="mt-4 text-2xl
+                                      font-semibold text-gray-800
+                                      capitalize dark:text-white">Block
+                of Ui kit
+                collections</h2>
+              <p class="mt-2 text-lg
+                                      tracking-wider text-blue-500
+                                      uppercase dark:text-blue-400 ">Ui
+                kit</p>
+            </div>
+          </div>
+
+          <div class="flex items-end
+                                  overflow-hidden bg-cover rounded-lg
+                                  h-96"
+
+                                  onclick="div(window.open('https:/webjr-web.github.io/Covid-19-AwarenessSite/', '_blank'));"
+
+
+            style="background-image:url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
+            <div class="w-full px-8 py-4
+                                    overflow-hidden rounded-b-lg
+                                    backdrop-blur-sm bg-white/60
+                                    dark:bg-gray-800/60">
+              <h2 class="mt-4 text-2xl
+                                      font-semibold text-gray-800
+                                      capitalize dark:text-white">Ton’s
+                of mobile
+                mockup</h2>
+              <p class="mt-2 text-lg
+                                      tracking-wider text-blue-500
+                                      uppercase dark:text-blue-400 ">Mockups</p>
+            </div>
+          </div>
+
+          <div class="flex items-end
+                                  overflow-hidden bg-cover rounded-lg
+                                  h-96"
+
+                                  onclick="div(window.open('https:/webjr-web.github.io/Portfolio-Site/', '_blank'));"
+
+
+            style="background-image:url('https://images.unsplash.com/photo-1603380353725-f8a4d39cc41e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
+            <div class="w-full px-8 py-4
+                                    overflow-hidden rounded-b-lg
+                                    backdrop-blur-sm bg-white/60
+                                    dark:bg-gray-800/60">
+              <h2 class="mt-4 text-2xl
+                                      font-semibold text-gray-800
+                                      capitalize dark:text-white">Huge
+                collection of
+                animation</h2>
+              <p class="mt-2 text-lg
+                                      tracking-wider text-blue-500
+                                      uppercase dark:text-blue-400 ">Animation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="contact" class="contactdiv">
+    <section class="w-full
+                          min-h-screen">
+      <div class="font-bold text-4xl md:text-6xl
+                            xl:text-7xl">
+        <p class="text-white p-4 mb-4 text-center">Contact
+          Us</p>
+      </div>
+      <div class="flex justify-around flex-col-reverse
+                            md:flex-row">
+        <div class=" md:w-1/2">
+          <section class="p-6 text-gray-100">
+            <form name="myForm" id="myForm" method="post" class="black_bg
+                                  container w-full max-w-xl p-8 mx-auto
+                                  space-y-6 rounded-3xl shadow
+                                  dark:bg-gray-900 ng-untouched ng-pristine
+                                  ng-valid ">
+              <h2 class="w-full text-3xl font-bold
+                                    leading-tight">Contact us</h2>
+              <div>
+                <label for="name" class="block mb-1
+                                      ml-1">Name</label>
+                <input id="name" type="text" name="name" placeholder="Your name" required class="block w-full p-2 rounded
+                                      focus:outline-none focus:ring
+                                      focus:ring-opacity-25
+                                      focus:ring-neutral-100 bg-gray-800">
+              </div>
+              <div>
+                <label for="email" class="block mb-1
+                                      ml-1">Email</label>
+                <input id="email" type="email" name="email" placeholder="Your email" required class="block w-full p-2 rounded
+                                      focus:outline-none focus:ring
+                                      focus:ring-opacity-25
+                                      focus:ring-violet-400 bg-gray-800">
+              </div>
+              <div>
+                <label for="message" class="block mb-1
+                                      ml-1">Message</label>
+                <textarea id="message" type="text" required name="message" placeholder="Message..." class="block
+                                      w-full p-2 rounded autoexpand
+                                      focus:outline-none focus:ring
+                                      focus:ring-opacity-25
+                                      focus:ring-violet-400 bg-gray-800"></textarea>
+              </div>
+              <div>
+                <button onclick="validation();" type="submit" class=" w-full
+                                      px-4 py-2 font-bold rounded shadow
+                                      focus:outline-none focus:ring
+                                      hover:ring focus:ring-opacity-
+                                      focus:ring-violet-400
+                                      hover:ring-violet-400
+                                      dark:text-gray-900 contact_button">Send</button>
+              </div>
+            </form>
+          </section>
+        </div>
+        <div class=" text-4xl md:text-5xl lg:text-7xl
+                              font-bold flex flex-col justify-center my-6
+                              text-center">
+          <p class="text-white">Get a Quote,</p>
+          <p class="text-white">by answering</p>
+          <p class="secondaryTxt">3 simple</p>
+          <p class="secondaryTxt">questions</p>
+        </div>
+      </div>
+
+    </section>
+
+    </div>
+  </section>
+
+  </div>
+
+  <footer class="text-white bg-gray-900 lg:grid
+                          lg:grid-cols-5 drop-shadow-lg ">
+    <aside class="hidden lg:relative lg:col-span-2
+                            lg:block">
+      <img class="absolute inset-0 object-cover w-full
+                              h-full" src="static/footer_img.svg" alt="Comic Graphic" />
+    </aside>
+
+    <div class="px-4 py-16 sm:px-6 lg:px-8
+                            lg:col-span-3">
+      <div class="grid grid-cols-1 gap-8
+                              sm:grid-cols-2">
+        <div>
+          <p class="font-medium">
+            <span class="text-xs tracking-widest
+                                    uppercase">
+              Support
+            </span>
+
+            <a class="block
+                                    hover:opacity-75">
+              +91 9789056970
+            </a>
+            <a class="block
+                                    hover:opacity-75" href="#contact">
+              webjr.web@gmail.com
+            </a>
+          </p>
+
+          <ul class="mt-8 text-sm space-y-2">
+            <li>Business Time - 24/7</li>
+          </ul>
+
+          <div class="flex mt-16 space-x-3">
+
+            <div class="md:w-6 w-4">
+
+              <a href="https://github.com/webjr-web">
+                <svg viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                  <path clip-rule="evenodd" d="M296.133 354.174c49.885-5.891
+                                          102.942-24.029
+                                          102.942-110.192
+                                          0-24.49-8.624-44.448-22.67-59.869
+                                          2.266-5.89
+                                          9.515-28.114-2.734-58.947 0
+                                          0-18.139-5.898-60.759
+                                          22.669-18.139-4.983-38.09-8.163-56.682-8.163-19.053
+                                          0-39.011
+                                          3.18-56.697
+                                          8.163-43.082-28.567-61.22-22.669-61.22-22.669-12.241
+                                          30.833-4.983 53.057-2.718
+                                          58.947-14.061 15.42-22.677
+                                          35.379-22.677 59.869 0 86.163 53.057
+                                          104.301 102.942
+                                          110.192-6.344 5.452-12.241
+                                          15.873-14.507 30.387-12.702
+                                          5.438-45.808 15.873-65.758-18.592 0
+                                          0-11.795-21.31-34.012-22.669 0
+                                          0-22.224-.453-1.813 13.592 0
+                                          0 14.96 6.812 24.943 32.653 0 0 13.6
+                                          43.089 76.179
+                                          29.48v38.543c0 5.906-4.53
+                                          12.702-15.865 10.89C96.139 438.977
+                                          32.2 354.626 32.2 255.77c0-123.807
+                                          100.216-224.022
+                                          224.03-224.022 123.347 0 224.023
+                                          100.216 223.57 224.022 0
+                                          98.856-63.946 182.754-152.828
+                                          212.688-11.342
+                                          2.266-15.873-4.53-15.873-10.89V395.45c.001-20.873-6.811-34.465-14.966-41.276zM512
+                                          256.23C512 114.73 397.263 0 256.23 0
+                                          114.73 0 0 114.73 0
+                                          256.23 0 397.263 114.73 512 256.23 512
+                                          397.263 512 512
+                                          397.263 512 256.23z" fill="#ffffff" fill-rule="evenodd" class="fill-0d2636">
+                  </path>
+                </svg>
+              </a>
+            </div>
+
+            <div class="md:w-6 w-4">
+              <a href="https://instagram.com/webjr.web?igshid=YmMyMTA2M2Y=">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.7
+                                        56.7" xml:space="preserve">
+                  <path d="M28.2 16.7c-7 0-12.8
+                                          5.7-12.8 12.8s5.7 12.8 12.8 12.8S41
+                                          36.5 41
+                                          29.5s-5.8-12.8-12.8-12.8zm0 21c-4.5
+                                          0-8.2-3.7-8.2-8.2s3.7-8.2 8.2-8.2 8.2
+                                          3.7 8.2 8.2-3.7
+                                          8.2-8.2 8.2z" fill="#ffffff" class="fill-000000"></path>
+                  <circle cx="41.5" cy="16.4" r="2.9" fill="#ffffff" class="fill-000000"></circle>
+                  <path d="M49
+                                          8.9c-2.6-2.7-6.3-4.1-10.5-4.1H17.9c-8.7
+                                          0-14.5 5.8-14.5
+                                          14.5v20.5c0 4.3 1.4 8 4.2 10.7 2.7 2.6
+                                          6.3 3.9 10.4
+                                          3.9h20.4c4.3 0 7.9-1.4 10.5-3.9
+                                          2.7-2.6 4.1-6.3
+                                          4.1-10.6V19.3c0-4.2-1.4-7.8-4-10.4zm-.4
+                                          31c0 3.1-1.1
+                                          5.6-2.9 7.3s-4.3 2.6-7.3 2.6H18c-3
+                                          0-5.5-.9-7.3-2.6C8.9
+                                          45.4 8 42.9 8 39.8V19.3c0-3 .9-5.5
+                                          2.7-7.3 1.7-1.7
+                                          4.3-2.6 7.3-2.6h20.6c3 0 5.5.9 7.3 2.7
+                                          1.7 1.8 2.7 4.3
+                                          2.7 7.2v20.6z" fill="#ffffff" class="fill-000000"></path>
+                </svg>
+              </a>
+            </div>
+
+            <div class="md:w-6 w-4 ">
+              <a href="https://www.linkedin.com/in/web-jr/
+                                      ">
+                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" fill-rule="evenodd">
+                    <path d="M30 60c16.569 0
+                                            30-13.431 30-30C60 13.431 46.569 0
+                                            30 0 13.431 0 0
+                                            13.431 0 30c0 16.569 13.431 30 30
+                                            30Z" fill="#ffffff" class="fill-000000"></path>
+                    <path d="M21.883
+                                            43.823V25.524h-5.656v18.3h5.656Zm0-24.785c-.034-1.637-1.125-2.884-2.898-2.884-1.773
+                                            0-2.932 1.247-2.932 2.884 0 1.602
+                                            1.125 2.885 2.864
+                                            2.885h.034c1.807 0 2.932-1.283
+                                            2.932-2.885Zm9.227
+                                            24.785V33.397c0-.558.04-1.116.204-1.513.449-1.116
+                                            1.47-2.27 3.184-2.27 2.246 0 3.654
+                                            1.274 3.654
+                                            3.783v10.426h5.694V33.118c0-5.734-3.061-8.402-7.144-8.402-3.348
+                                            0-4.817 1.871-5.633
+                                            3.145l.04-2.447h-5.684c.082 1.752
+                                            0 18.41 0 18.41h5.685Z" fill="#000000" class="fill-ffffff"></path>
+                  </g>
+                </svg>
+              </a>
+
+            </div>
+
+            <div class="md:w-6 w-4">
+
+              <a href="https://www.behance.net/webjr">
+                <svg version="1.0" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="#ffffff" class="fill-111111">
+                    <path d="M12.914
+                                            15.272s3.027-.23
+                                            3.027-3.852c0-3.619-2.053-5.403-5.191-5.403L0
+                                            6v20h11s5.5.174 5.5-6c0 0
+                                            .404-4.728-3.586-4.728zM4
+                                            9h5.5s1.882.031 1.882 2.471C11.382
+                                            14 9.5 14 9.5
+                                            14H4V9zm6 14H4v-6h6s3 .031 3 3-2.568
+                                            3-3 3zM25
+                                            11c-7.513 0-7.5 7.5-7.5 7.5S17 26 25
+                                            26c0 0 7 0
+                                            7-6h-4s0 3-3 3c0 0-3 0-3-4h10c0-2
+                                            0-8-7-8zm-3
+                                            6s-.066-3 3-3c3.065 0 3 3 3 3h-6zM21
+                                            8h8v2h-8z"></path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4
+                                sm:grid-cols-2">
+          <div>
+            <p class="font-medium">
+              Company
+            </p>
+
+            <nav class="flex flex-col mt-4
+                                    text-sm text-gray-300
+                                    space-y-2">
+              <a class="hover:opacity-75" href="#solutions"> Solutions </a>
+              <a class="hover:opacity-75" href="#testimonials"> Testimonials </a>
+              <a class="hover:opacity-75" href="#portid"> Portfolio </a>
+              <a class="hover:opacity-75" href="#contact"> Contact </a>
+
+            </nav>
+          </div>
+
+          <div>
+            <p class="font-medium">Services</p>
+            <nav class="flex flex-col mt-4
+                                    text-sm text-gray-300
+                                    space-y-2">
+              <a class="hover:opacity-75" href="#portid"> Web Design </a>
+              <a class="hover:opacity-75" href="#portid"> Business Branding </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-12 mt-12 border-t
+                              border-gray-800">
+        <div class="text-sm text-gray-300
+                                sm:items-center sm:justify-between
+                                sm:flex">
+          <div class="flex space-x-3">
+            <a class="hover:opacity-75" href=""> Privacy Policy </a>
+            <a class="hover:opacity-75" href=""> Terms & Conditions
+            </a>
+            <a class="hover:opacity-75" href=""> Returns Policy </a>
+          </div>
+
+          <p class="mt-4 sm:mt-0">
+            &copy; 2022 WebJr.
+          </p>
+        </div>
+
+        <p class="mt-8 text-xs
+                                text-gray-500">
+          If you're a small business, you need
+          a website. That's why we're here.
+          We make it easy for small
+          businesses to build their own websites
+          and stay up-to-date on
+          the latest mobile trends.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script crossorigin="anonymous" defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+
+    function div(link){
+      document.querySelector('.div').addEventListener('click', function () {
+      location.href = link;
+    }, false);
+    }
+
+    
+    function validation() {
+      let x = document.forms["myForm"]["name"].value;
+      let y = document.forms["myForm"]["email"].value;
+      let check = 0;
+      const regex_pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+      if (regex_pattern.test(y)) {
+        check = 0;
+      }
+      else {
+        check = 1;
+      }
+      if (x == "") {
+        alert("Name must be filled out");
+        return false;
+      } else if (check) {
+        alert("The email address is not valid");
+        return false;
+      } else {
+        document.getElementById("myForm").action = "https://formspree.io/f/xnqrvzzd";
+      }
+    }
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const swiper = new Swiper('.swiper-container', {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 32,
+        centeredSlides: true,
+        autoplay: {
+          delay: 8000,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1.5,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      })
+    })
+  </script>
+</body>
+
+</html>
