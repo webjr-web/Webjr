@@ -1286,13 +1286,17 @@
   <script crossorigin="anonymous" defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
 
+//     function div(link, num) {
+//       let tar = ".d" + num;
+//       console.log(tar);
+//       document.querySelector(tar).addEventListener('click', () => {
+//         location.href = link;
+//         location.target = '_blank';
+//       }, false);
+//     }
     function div(link, num) {
       let tar = ".d" + num;
-      console.log(tar);
-      document.querySelector(tar).addEventListener('click', () => {
-        location.href = link;
-        location.target = '_blank';
-      }, false);
+        window.open(link, '_blank');
     }
 
 
