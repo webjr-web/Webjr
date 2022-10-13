@@ -1022,6 +1022,7 @@
                                   #f20475;">PORTFOLIO</span>
           </section>
           <div class="parent">
+
             <div class="div1 d1" onclick="div('https://webjr-web.github.io/ReqSourcing/');"><img
                 src="./static/reqThumbnail.png" alt="reqThumbnail"></div>
             <div class="div2 d2" onclick="div('https://webjr-web.github.io/TechSaavy-Club/');"><img
@@ -1034,6 +1035,14 @@
             <!--<div class="div6 d6" onclick="div('');"></div> -->
             <div class="div7 d7" onclick="div('https://webjr-web.github.io/Portfolio-Site/');"><img
               src="./static/portThumbnail.png" alt="portThumbnail"></div>
+
+            <div class="div1 d1" onclick="div('https://webjr-web.github.io/ReqSourcing/', 1);"></div>
+            <div class="div2 d2" onclick="div('https://webjr-web.github.io/TechSaavy-Club/',2);"></div>
+            <div class="div3 d3" onclick="div('https://webjr-web.github.io/Covid-19-AwarenessSite/', 3);"></div>
+            <div class="div4 d4" onclick="div('https://webjr-web.github.io/Portfolio-Site/', 4);"></div>
+            <div class="div5 d5" onclick="div('https://webjr-web.github.io/HomeSmart/',5);"></div>
+            <div class="div6 d6" onclick="div('');"></div>
+            <div class="div7 d7" onclick="div('');"></div>
           </div>
         </div>
 
@@ -1054,8 +1063,13 @@
           <div class="flex items-end
                                   overflow-hidden bg-cover rounded-lg
                                   h-96"
+
             onclick="div(window.open('https://webjr-web.github.io/ReqSourcing/', '_blank'));"
             style="background-image:url('./static/reqThumbnail.png')">
+
+            onclick="div(window.open('https:/webjr-web.github.io/ReqSourcing/', '_blank'));"
+            style="background-image:url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80')">
+
             <div class="w-full px-8 py-4
                                     overflow-hidden rounded-b-lg
                                     backdrop-blur-sm bg-white/60
@@ -1071,8 +1085,14 @@
 
           <div class="flex items-end
                                   overflow-hidden bg-cover rounded-lg
+
                                   h-96" onclick="div('https://webjr-web.github.io/TechSaavy-Club/');"
             style="background-image:url('./static/techsaavy.png')">
+
+                                  h-96"
+            onclick="div(window.open('https:/webjr-web.github.io/TechSaavy-Club/', '_blank'));"
+            style="background-image:url('https://images.unsplash.com/photo-1621609764180-2ca554a9d6f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80')">
+
             <div class="w-full px-8 py-4
                                     overflow-hidden rounded-b-lg
                                     backdrop-blur-sm bg-white/60
@@ -1088,8 +1108,14 @@
 
           <div class="flex items-end
                                   overflow-hidden bg-cover rounded-lg
+
                                   h-96" onclick="div('https://webjr-web.github.io/Covid-19-AwarenessSite/');"
             style="background-image:url('./static/covidThumbnail.png')">
+
+                                  h-96"
+            onclick="div(window.open('https:/webjr-web.github.io/Covid-19-AwarenessSite/', '_blank'));"
+            style="background-image:url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
+
             <div class="w-full px-8 py-4
                                     overflow-hidden rounded-b-lg
                                     backdrop-blur-sm bg-white/60
@@ -1105,8 +1131,14 @@
 
           <div class="flex items-end
                                   overflow-hidden bg-cover rounded-lg
+
                                   h-96" onclick="div('https://webjr-web.github.io/Portfolio-Site/');"
             style="background-image:url('./static/portThumbnail.png')">
+
+                                  h-96"
+            onclick="div(window.open('https:/webjr-web.github.io/Portfolio-Site/', '_blank'));"
+            style="background-image:url('https://images.unsplash.com/photo-1603380353725-f8a4d39cc41e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
+
             <div class="w-full px-8 py-4
                                     overflow-hidden rounded-b-lg
                                     backdrop-blur-sm bg-white/60
@@ -1434,9 +1466,25 @@
   <script crossorigin="anonymous" defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
 
+
     function div(link, num) {
       window.open(link, '_blank');
     }
+
+
+//     function div(link, num) {
+//       let tar = ".d" + num;
+//       console.log(tar);
+//       document.querySelector(tar).addEventListener('click', () => {
+//         location.href = link;
+//         location.target = '_blank';
+//       }, false);
+//     }
+    function div(link, num) {
+        window.open(link, '_blank');
+    }
+
+
 
     function validation() {
       let x = document.forms["myForm"]["name"].value;
